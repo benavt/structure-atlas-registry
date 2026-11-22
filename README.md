@@ -6,9 +6,12 @@ rosters (**Project Registries**).
 
 This repository stores **metadata, Zenodo DOIs, `Structure_Clustering` software
 release pins, Cloudflare Pages URLs, and SHA-256 digests only**. Raw coordinate
-archives live permanently on **Zenodo**; interactive static bundles live on
-**Cloudflare Pages** (`*.pages.dev`); temporary feature previews live on
-**GitHub Pages** built from `Structure_Clustering@experimental`.
+archives live permanently on **Zenodo** (and are mirrored deterministically onto
+Pax's attached SSD via `structure-clustering sync-ssd`); canonical public sites
+live on **Cloudflare Pages** (`<project>.pages.dev`); pre-release targets and
+experimental feature reviews live on the Cloudflare Zero Trust Access-protected
+private portal (`structure-atlas-private.pages.dev`). GitHub Pages is retired
+for Structure Clustering projects (preserving legacy `SCHERAGA_POSTER`).
 
 ## Repository Layout
 
