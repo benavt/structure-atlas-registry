@@ -1,0 +1,10 @@
+{
+  "schema_version": 1,
+  "project_id": "et",
+  "title": "ET / BET Domain Structure Atlas",
+  "description": "BRD3-ET and BET-domain conformational ensemble atlases.",
+  "repository": "benavt/et-structure-atlas",
+  "canonical_site": "https://et-structure-atlas.pages.dev/",
+  "demo_site": null,
+  "targets": []
+}

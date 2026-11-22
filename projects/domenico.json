@@ -1,0 +1,10 @@
+{
+  "schema_version": 1,
+  "project_id": "domenico",
+  "title": "Domenico Structure Atlas",
+  "description": "Domenico multi-conformation protein target cohorts (5NTase, RBP, SERCA, and ensemble cohorts).",
+  "repository": "benavt/domenico-targets",
+  "canonical_site": "https://domenico-structure-atlas.pages.dev/",
+  "demo_site": "https://benavt.github.io/domenico-structure-atlas/",
+  "targets": []
+}

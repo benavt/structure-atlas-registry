@@ -1,0 +1,10 @@
+{
+  "schema_version": 1,
+  "project_id": "ls-ais",
+  "title": "LS AIS Structure Atlas",
+  "description": "LS AIS conformational ensemble atlases (HSPH1, DOC1-CDK2, DOC1R-CDK2, CDK2-DOC1 monomers, PDCD2, CIT).",
+  "repository": "benavt/LS_AIS",
+  "canonical_site": "https://ls-ais-atlas.pages.dev/",
+  "demo_site": "https://benavt.github.io/LS_AIS/",
+  "targets": []
+}

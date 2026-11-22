@@ -1,0 +1,51 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/benavt/structure-atlas-registry/schemas/project-registry.schema.json",
+  "title": "Structure Atlas Project Registry (Linked-List Roster)",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "project_id",
+    "title",
+    "repository",
+    "canonical_site",
+    "targets"
+  ],
+  "properties": {
+    "schema_version": { "const": 1 },
+    "project_id": { "type": "string", "pattern": "^[a-z0-9][a-z0-9-]{1,63}$" },
+    "title": { "type": "string", "minLength": 1 },
+    "description": { "type": "string" },
+    "repository": { "type": "string", "pattern": "^[A-Za-z0-9_.-]+/[A-Za-z0-9_.-]+$" },
+    "canonical_site": { "type": "string", "pattern": "^https://" },
+    "demo_site": { "type": ["string", "null"] },
+    "targets": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "target_id",
+          "release_version",
+          "zenodo_version_doi",
+          "target_url",
+          "prev_target_id",
+          "next_target_id"
+        ],
+        "properties": {
+          "target_id": { "type": "string", "pattern": "^[a-z0-9][a-z0-9_-]{1,63}$" },
+          "release_version": { "type": "string", "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+$" },
+          "zenodo_concept_doi": {
+            "type": ["string", "null"],
+            "pattern": "^10\\.5281/zenodo\\.[0-9]+$"
+          },
+          "zenodo_version_doi": { "type": "string", "pattern": "^10\\.5281/zenodo\\.[0-9]+$" },
+          "target_url": { "type": "string", "pattern": "^https://" },
+          "prev_target_id": { "type": ["string", "null"] },
+          "next_target_id": { "type": ["string", "null"] }
+        }
+      }
+    }
+  }
+}

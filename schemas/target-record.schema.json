@@ -1,0 +1,119 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/benavt/structure-atlas-registry/schemas/target-record.schema.json",
+  "title": "Structure Atlas Target Record",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "target_id",
+    "display_name",
+    "accession",
+    "construct",
+    "owner_project",
+    "projects",
+    "zenodo_concept_doi",
+    "current_release",
+    "releases"
+  ],
+  "properties": {
+    "schema_version": { "const": 1 },
+    "target_id": { "type": "string", "pattern": "^[a-z0-9][a-z0-9_-]{1,63}$" },
+    "display_name": { "type": "string", "minLength": 1 },
+    "accession": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "pdb": { "type": ["string", "null"] },
+        "uniprot": { "type": ["string", "null"] },
+        "bmrb": { "type": ["string", "null"] }
+      }
+    },
+    "construct": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["sequence_sha256", "length"],
+      "properties": {
+        "sequence_sha256": { "type": "string", "pattern": "^[0-9a-f]{64}$" },
+        "length": { "type": "integer", "minimum": 1 },
+        "chains": { "type": "array", "items": { "type": "string" } },
+        "notes": { "type": ["string", "null"] }
+      }
+    },
+    "owner_project": { "type": "string", "pattern": "^[a-z0-9][a-z0-9-]{1,63}$" },
+    "projects": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": { "type": "string", "pattern": "^[a-z0-9][a-z0-9-]{1,63}$" }
+    },
+    "zenodo_concept_doi": {
+      "type": ["string", "null"],
+      "pattern": "^10\\.5281/zenodo\\.[0-9]+$"
+    },
+    "current_release": { "type": "string", "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+$" },
+    "releases": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "version",
+          "released_at",
+          "cohort_id",
+          "model_count",
+          "structure_clustering",
+          "zenodo",
+          "score_bundle",
+          "canonical_url",
+          "site_bundle_sha256"
+        ],
+        "properties": {
+          "version": { "type": "string", "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+$" },
+          "released_at": { "type": "string", "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}$" },
+          "cohort_id": { "type": "string", "minLength": 1 },
+          "model_count": { "type": "integer", "minimum": 1 },
+          "notes": { "type": ["string", "null"] },
+          "structure_clustering": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["tag", "commit"],
+            "properties": {
+              "tag": { "type": "string", "minLength": 1 },
+              "commit": { "type": "string", "pattern": "^[0-9a-f]{40}$" },
+              "zenodo_doi": { "type": ["string", "null"] }
+            }
+          },
+          "zenodo": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["environment", "version_doi", "url", "package_sha256"],
+            "properties": {
+              "environment": { "enum": ["sandbox", "production"] },
+              "version_doi": { "type": "string", "pattern": "^10\\.5281/zenodo\\.[0-9]+$" },
+              "url": { "type": "string", "pattern": "^https://" },
+              "package_sha256": { "type": "string", "pattern": "^[0-9a-f]{64}$" }
+            }
+          },
+          "score_bundle": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["schema_version", "manifest_sha256", "tiers"],
+            "properties": {
+              "schema_version": { "const": 1 },
+              "manifest_sha256": { "type": "string", "pattern": "^[0-9a-f]{64}$" },
+              "tiers": {
+                "type": "array",
+                "items": { "enum": ["model", "residue", "ensemble"] },
+                "uniqueItems": true
+              }
+            }
+          },
+          "canonical_url": { "type": "string", "pattern": "^https://" },
+          "site_bundle_sha256": { "type": "string", "pattern": "^[0-9a-f]{64}$" }
+        }
+      }
+    }
+  }
+}

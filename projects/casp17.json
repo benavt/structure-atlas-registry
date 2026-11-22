@@ -1,0 +1,10 @@
+{
+  "schema_version": 1,
+  "project_id": "casp17",
+  "title": "CASP17 Structure Atlas",
+  "description": "Five NESG/BMRB CASP17 NMR conformational ensemble targets (StR82, SR215, CmR116, BhR2, PaT90).",
+  "repository": "benavt/ais-casp17-clusters",
+  "canonical_site": "https://casp17-structure-atlas.pages.dev/",
+  "demo_site": "https://benavt.github.io/ais-casp17-clusters/",
+  "targets": []
+}
