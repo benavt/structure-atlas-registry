@@ -19,7 +19,42 @@
     "description": { "type": "string" },
     "repository": { "type": "string", "pattern": "^[A-Za-z0-9_.-]+/[A-Za-z0-9_.-]+$" },
     "canonical_site": { "type": "string", "pattern": "^https://" },
+    "access_mode": {
+      "type": "string",
+      "enum": ["private", "public"],
+      "description": "Cloudflare Pages access state. Collaborator email allowlists live solely in Cloudflare Zero Trust Access, never in GitHub."
+    },
     "demo_site": { "type": ["string", "null"] },
+    "staged_targets": {
+      "type": "array",
+      "description": "Pre-release targets live on this project's Zero Trust Access-protected Cloudflare Pages site prior to Zenodo Production DOI graduation.",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "target_id",
+          "display_name",
+          "status",
+          "model_count",
+          "structure_clustering_ref",
+          "target_url"
+        ],
+        "properties": {
+          "target_id": { "type": "string", "pattern": "^[a-z0-9][a-z0-9_-]{1,63}$" },
+          "display_name": { "type": "string", "minLength": 1 },
+          "status": { "type": "string", "enum": ["pre_release", "sandbox_draft"] },
+          "model_count": { "type": "integer", "minimum": 1 },
+          "structure_clustering_ref": { "type": "string", "minLength": 1 },
+          "target_url": { "type": "string", "pattern": "^https://" },
+          "zenodo_sandbox_url": { "type": ["string", "null"] },
+          "residue_scopes": {
+            "type": "array",
+            "items": { "type": "string", "minLength": 1 }
+          },
+          "notes": { "type": "string" }
+        }
+      }
+    },
     "targets": {
       "type": "array",
       "items": {

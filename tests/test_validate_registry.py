@@ -170,3 +170,25 @@ def test_private_path_leak_rejected(tmp_path: Path) -> None:
     (tmp_path / "targets" / "2j5x.json").write_text(json.dumps(bad), encoding="utf-8")
     with pytest.raises(RegistryValidationError, match="Privacy violation"):
         validate_registry(tmp_path)
+
+
+def test_email_leak_rejected(tmp_path: Path) -> None:
+    (tmp_path / "targets").mkdir()
+    (tmp_path / "projects").mkdir()
+    (tmp_path / "projects" / "ls-ais.json").write_text(
+        json.dumps(
+            {
+                "schema_version": 1,
+                "project_id": "ls-ais",
+                "title": "LS_AIS",
+                "repository": "benavt/LS_AIS",
+                "canonical_site": "https://ls-ais-structure-atlas.pages.dev/",
+                "access_mode": "private",
+                "description": "Allowlist person@example.edu must never be committed",
+                "targets": [],
+            }
+        ),
+        encoding="utf-8",
+    )
+    with pytest.raises(RegistryValidationError, match="Privacy violation"):
+        validate_registry(tmp_path)

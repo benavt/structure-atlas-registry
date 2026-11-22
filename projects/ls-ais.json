@@ -1,10 +1,27 @@
 {
   "schema_version": 1,
   "project_id": "ls-ais",
-  "title": "LS AIS Structure Atlas",
-  "description": "LS AIS conformational ensemble atlases (HSPH1, DOC1-CDK2, DOC1R-CDK2, CDK2-DOC1 monomers, PDCD2, CIT).",
+  "title": "LS_AIS Structure Atlas",
+  "description": "LS_AIS conformational ensemble atlases. Starting with PDCD2 (full 11,000-model cohort); legacy LS_AIS targets (HSPH1, DOC1-CDK2, DOC1R-CDK2, CDK2-DOC1 monomers, CIT) will migrate into this registry.",
   "repository": "benavt/LS_AIS",
-  "canonical_site": "https://ls-ais-atlas.pages.dev/",
-  "demo_site": "https://benavt.github.io/LS_AIS/",
+  "canonical_site": "https://ls-ais-structure-atlas.pages.dev/",
+  "access_mode": "private",
+  "demo_site": null,
+  "staged_targets": [
+    {
+      "target_id": "pdcd2",
+      "display_name": "PDCD2",
+      "status": "pre_release",
+      "model_count": 11000,
+      "structure_clustering_ref": "v0.2.0",
+      "target_url": "https://ls-ais-structure-atlas.pages.dev/targets/pdcd2/",
+      "zenodo_sandbox_url": null,
+      "residue_scopes": [
+        "all (A:1-364, 364 aa)",
+        "lid-and-interior (A:120-170 + A:220-270, 102 aa)"
+      ],
+      "notes": "Complete 11,000-model cohort across 11 sampling methods. Legacy LS_AIS residue scopes applied to full cohort; zero model-subset cohorts."
+    }
+  ],
   "targets": []
 }

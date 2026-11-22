@@ -28,7 +28,7 @@ ID_RE = re.compile(r"^[a-z0-9][a-z0-9_-]{1,63}$")
 PROJ_ID_RE = re.compile(r"^[a-z0-9][a-z0-9-]{1,63}$")
 
 PRIVATE_LEAK_RE = re.compile(
-    r"(/Users/|/home/|/scratch/|/data/montelione|(?i:paxmundane)|(?i:(?:^|[^a-z])mimas(?:[^a-z]|$))|ghp_|github_pat_|AKIA[0-9A-Z]{16})"
+    r"(/Users/|/home/|/scratch/|/data/montelione|(?i:paxmundane)|(?i:(?:^|[^a-z])mimas(?:[^a-z]|$))|ghp_|github_pat_|AKIA[0-9A-Z]{16}|[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,})"
 )
 
 
@@ -128,6 +128,32 @@ def validate_project_registry(
         )
     if not str(data.get("canonical_site", "")).startswith("https://"):
         raise RegistryValidationError(f"projects/{filename_stem}.json: canonical_site must use https://")
+    access_mode = data.get("access_mode")
+    if access_mode is not None and access_mode not in {"private", "public"}:
+        raise RegistryValidationError(
+            f"projects/{filename_stem}.json: access_mode must be 'private' or 'public', got {access_mode!r}"
+        )
+
+    staged = data.get("staged_targets")
+    if staged is not None:
+        if not isinstance(staged, list):
+            raise RegistryValidationError(f"projects/{filename_stem}.json: staged_targets must be a list")
+        staged_seen: set[str] = set()
+        for entry in staged:
+            tid = str(entry.get("target_id", ""))
+            if not ID_RE.fullmatch(tid) or tid in staged_seen:
+                raise RegistryValidationError(
+                    f"projects/{filename_stem}.json: invalid or duplicate staged target_id {tid!r}"
+                )
+            staged_seen.add(tid)
+            if entry.get("status") not in {"pre_release", "sandbox_draft"}:
+                raise RegistryValidationError(
+                    f"projects/{filename_stem}.json ({tid}): invalid staged status {entry.get('status')!r}"
+                )
+            if not str(entry.get("target_url", "")).startswith("https://"):
+                raise RegistryValidationError(
+                    f"projects/{filename_stem}.json ({tid}): staged target_url must use https://"
+                )
 
     entries = data.get("targets")
     if not isinstance(entries, list):
