@@ -2,9 +2,93 @@
   "schema_version": 1,
   "project_id": "casp17",
   "title": "CASP17 Structure Atlas",
-  "description": "Five NESG/BMRB CASP17 NMR conformational ensemble targets (StR82, SR215, CmR116, BhR2, PaT90).",
+  "description": "Five NESG/BMRB CASP17 NMR conformational ensemble targets (SR215 with deterministic 3-tier RPF integration, CmR116, PaT90, StR82, BhR2).",
   "repository": "benavt/ais-casp17-clusters",
   "canonical_site": "https://casp17-structure-atlas.pages.dev/",
+  "access_mode": "private",
   "demo_site": "https://benavt.github.io/ais-casp17-clusters/",
+  "staged_targets": [
+    {
+      "target_id": "sr215",
+      "display_name": "SR215 \u00b7 BMRB 6366 (3-Tier RPF)",
+      "status": "pre_release",
+      "model_count": 12104,
+      "structure_clustering_ref": "v0.2.0",
+      "target_url": "https://casp17-structure-atlas.pages.dev/targets/sr215/",
+      "model_cohorts": [
+        "ais-11000 (11-method AIS, 11,000 models)",
+        "no-afcluster-11104 (No-AFCluster + AFsample-classic, 11,104 models)",
+        "afs3-bioemu2-2000 (AFsample3 + BioEmu2, 2,000 models)"
+      ],
+      "residue_scopes": [
+        "all (A:1-139, 139 aa)",
+        "res5-95 (A:5-95, 91 aa)",
+        "res32-47-plus78-99 (A:32-47 + A:78-99, 38 aa)",
+        "res32-47-plus78-99-plus121-139 (A:32-47 + A:78-99 + A:121-139, 57 aa; AFsample3+BioEmu2 cohort)"
+      ],
+      "notes": "10 model x residue cohorts (20 views) with 12,432 packed C-alpha structures and deterministic 3-tier RPF integration: Tier 1 per-model RPF DP/Recall/Precision (SR215-TR-2026-11-13-v3, 12,104 models) + MolProbity + ProteinEBM M6; Tier 2 per-residue sr215_DP.QP NOESY precision diagnostics (SR215-TR-2026-11-06-v1 archived, split into single-model sharded and joint-ensemble Model ave); Tier 3 exact ensemble RPF (SR215-TR-2026-11-06-v1 archived, 48 AIS panels + 6 no-AFCluster state panels); validated atlas-score-bundle-v1 CSVs and PDF reports."
+    },
+    {
+      "target_id": "cmr116",
+      "display_name": "CmR116 \u00b7 BMRB 17022",
+      "status": "pre_release",
+      "model_count": 11000,
+      "structure_clustering_ref": "v0.2.0",
+      "target_url": "https://casp17-structure-atlas.pages.dev/targets/cmr116/",
+      "model_cohorts": [
+        "ais-11000 (11-method AIS, 11,000 models)"
+      ],
+      "residue_scopes": [
+        "all (A:1-131, 131 aa)"
+      ],
+      "notes": "Complete 11,000-model 11-method AIS cohort across primary & HDBSCAN density clusterings with medoid TM matrices, native Bonsai trees, Mean pLDDT & pTM coloring, and packed C-alpha structures."
+    },
+    {
+      "target_id": "pat90",
+      "display_name": "PaT90 \u00b7 BMRB 7191",
+      "status": "pre_release",
+      "model_count": 11000,
+      "structure_clustering_ref": "v0.2.0",
+      "target_url": "https://casp17-structure-atlas.pages.dev/targets/pat90/",
+      "model_cohorts": [
+        "ais-11000 (11-method AIS, 11,000 models)"
+      ],
+      "residue_scopes": [
+        "all (A:8-91 retained of 97, 84 aa)",
+        "res24-91 (A:24-91 retained of 97, 68 aa)"
+      ],
+      "notes": "Complete 11,000-model 11-method AIS cohort across both residue scopes (all A:8-91 and trimmed A:24-91) with primary & HDBSCAN density clusterings, medoid TM matrices, Bonsai trees, Mean pLDDT & pTM coloring, and packed C-alpha structures."
+    },
+    {
+      "target_id": "str82",
+      "display_name": "StR82 \u00b7 BMRB 15386",
+      "status": "pre_release",
+      "model_count": 11000,
+      "structure_clustering_ref": "v0.2.0",
+      "target_url": "https://casp17-structure-atlas.pages.dev/targets/str82/",
+      "model_cohorts": [
+        "ais-11000 (11-method AIS, 11,000 models)"
+      ],
+      "residue_scopes": [
+        "all (A:1-77, 77 aa)"
+      ],
+      "notes": "Complete 11,000-model 11-method AIS cohort across primary & HDBSCAN density clusterings with medoid TM matrices, native Bonsai trees, Mean pLDDT & pTM coloring, and packed C-alpha structures."
+    },
+    {
+      "target_id": "bhr2",
+      "display_name": "BhR2 \u00b7 BMRB 6717",
+      "status": "pre_release",
+      "model_count": 11000,
+      "structure_clustering_ref": "v0.2.0",
+      "target_url": "https://casp17-structure-atlas.pages.dev/targets/bhr2/",
+      "model_cohorts": [
+        "ais-11000 (11-method AIS, 11,000 models)"
+      ],
+      "residue_scopes": [
+        "all (A:1-107, 107 aa)"
+      ],
+      "notes": "Complete 11,000-model 11-method AIS cohort across primary & HDBSCAN density clusterings with medoid TM matrices, native Bonsai trees, Mean pLDDT & pTM coloring, and packed C-alpha structures."
+    }
+  ],
   "targets": []
 }
