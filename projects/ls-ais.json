@@ -11,16 +11,42 @@
     {
       "target_id": "pdcd2",
       "display_name": "PDCD2",
-      "status": "pre_release",
+      "status": "sandbox_draft",
       "model_count": 11000,
       "structure_clustering_ref": "v0.2.0",
       "target_url": "https://ls-ais-structure-atlas.pages.dev/targets/pdcd2/",
-      "zenodo_sandbox_url": null,
+      "zenodo_sandbox_url": "https://sandbox.zenodo.org/records/647669",
       "residue_scopes": [
         "all (A:1-364, 364 aa)",
         "lid-and-interior (A:120-170 + A:220-270, 102 aa)"
       ],
-      "notes": "Complete 11,000-model cohort across 11 sampling methods. Legacy LS_AIS residue scopes applied to full cohort; zero model-subset cohorts."
+      "notes": "Complete 11,000-model cohort across 11 sampling methods with ProteinEBM M6 + FoXS SAXS (q<=0.50 & q<=0.45). Zenodo Sandbox DOI: 10.5072/zenodo.647669."
+    },
+    {
+      "target_id": "cit",
+      "display_name": "CIT \u00b7 Citron kinase domain",
+      "status": "sandbox_draft",
+      "model_count": 11000,
+      "structure_clustering_ref": "v0.2.0",
+      "target_url": "https://ls-ais-structure-atlas.pages.dev/targets/cit/",
+      "zenodo_sandbox_url": "https://sandbox.zenodo.org/records/647652",
+      "residue_scopes": [
+        "all (A:1-153, 153 aa)"
+      ],
+      "notes": "Complete 11,000-model cohort across 11 sampling methods with ProteinEBM M6 + FoXS SAXS (q<=0.38). Zenodo Sandbox DOI: 10.5072/zenodo.647652."
+    },
+    {
+      "target_id": "hsph1",
+      "display_name": "HSPH1 \u00b7 Homodimer",
+      "status": "sandbox_draft",
+      "model_count": 7000,
+      "structure_clustering_ref": "v0.2.0",
+      "target_url": "https://ls-ais-structure-atlas.pages.dev/targets/hsph1/",
+      "zenodo_sandbox_url": "https://sandbox.zenodo.org/records/647648",
+      "residue_scopes": [
+        "all (A:1-117 + B:1-117, 234 aa)"
+      ],
+      "notes": "Complete 7,000-model homodimer cohort across 7 multimer-capable sampling methods with ProteinEBM M6 + FoXS SAXS. Zenodo Sandbox DOI: 10.5072/zenodo.647648."
     }
   ],
   "targets": []

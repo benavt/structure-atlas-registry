@@ -10,12 +10,12 @@
   "staged_targets": [
     {
       "target_id": "2jk4",
-      "display_name": "2JK4 · VDAC1",
+      "display_name": "2JK4 \u00b7 VDAC1",
       "status": "sandbox_draft",
       "model_count": 11000,
       "structure_clustering_ref": "v0.2.0",
       "target_url": "https://vdac1-structure-atlas.pages.dev/targets/2jk4/",
-      "zenodo_sandbox_url": "https://sandbox.zenodo.org/deposit/647657",
+      "zenodo_sandbox_url": "https://sandbox.zenodo.org/records/647657",
       "residue_scopes": [
         "full294 (A:1-294, 294 aa)"
       ],
