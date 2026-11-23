@@ -60,6 +60,8 @@ def test_repo_registry_is_valid() -> None:
     for pid in ("jernigan", "domenico"):
         raw = (root / "projects" / f"{pid}.json").read_text(encoding="utf-8").lower()
         assert "2jk4" not in raw and "vdac1" not in raw
+    jernigan_raw = (root / "projects" / "jernigan.json").read_text(encoding="utf-8").lower()
+    assert "2j5x" not in jernigan_raw and "arf6" not in jernigan_raw
 
 
 def test_linked_list_and_cross_project_reuse(tmp_path: Path) -> None:

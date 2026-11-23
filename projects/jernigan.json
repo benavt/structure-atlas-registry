@@ -2,7 +2,7 @@
   "schema_version": 1,
   "project_id": "jernigan",
   "title": "Jernigan Structure Atlas",
-  "description": "Five complete 11,000-model AIS conformational cohorts (2J5X, 6OCV, 2M6L, 6AGP, 6XG5). Pilot #1 (2J5X) will be the first canonical Target Release.",
+  "description": "Four complete 11,000-model AIS conformational cohorts (6OCV, 2M6L, 6AGP, 6XG5).",
   "repository": "benavt/Jernigan",
   "canonical_site": "https://jernigan-structure-atlas.pages.dev/",
   "demo_site": "https://benavt.github.io/jernigan-structure-atlas/",
