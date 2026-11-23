@@ -1,0 +1,26 @@
+{
+  "schema_version": 1,
+  "project_id": "vdac1",
+  "title": "VDAC1 (2JK4) Structure Atlas",
+  "description": "Standalone private Structure Atlas for human VDAC1 (PDB 2JK4, complete 11,000-model 11-method AIS conformational cohort). Maintained independently of the Jernigan and Domenico project registries.",
+  "repository": "benavt/structure-atlas-registry",
+  "canonical_site": "https://vdac1-structure-atlas.pages.dev/",
+  "access_mode": "private",
+  "demo_site": null,
+  "staged_targets": [
+    {
+      "target_id": "2jk4",
+      "display_name": "2JK4 · VDAC1",
+      "status": "sandbox_draft",
+      "model_count": 11000,
+      "structure_clustering_ref": "v0.2.0",
+      "target_url": "https://vdac1-structure-atlas.pages.dev/targets/2jk4/",
+      "zenodo_sandbox_url": "https://sandbox.zenodo.org/deposit/647657",
+      "residue_scopes": [
+        "full294 (A:1-294, 294 aa)"
+      ],
+      "notes": "Complete 11,000-model cohort across 11 AIS sampling methods (1,000 models per method) with full 16-timepoint ProteinEBM Model 6 energies."
+    }
+  ],
+  "targets": []
+}

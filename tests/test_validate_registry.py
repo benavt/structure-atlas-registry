@@ -55,7 +55,11 @@ def _make_target(target_id: str, owner: str, projects: list[str], doi: str) -> d
 def test_repo_registry_is_valid() -> None:
     root = Path(__file__).resolve().parent.parent
     summary = validate_registry(root)
-    assert summary["projects_validated"] == 5
+    assert summary["projects_validated"] == 6
+    assert "vdac1" in summary["project_target_links"]
+    for pid in ("jernigan", "domenico"):
+        raw = (root / "projects" / f"{pid}.json").read_text(encoding="utf-8").lower()
+        assert "2jk4" not in raw and "vdac1" not in raw
 
 
 def test_linked_list_and_cross_project_reuse(tmp_path: Path) -> None:
