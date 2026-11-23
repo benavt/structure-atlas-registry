@@ -27,9 +27,19 @@ GitHub Pages is retired for Structure Clustering projects (preserving legacy `SC
   project (`canonical_site`, `access_mode`, optional `staged_targets[]` live on
   the project's private Cloudflare Pages portal, and ordered linked-list
   `targets[]` of graduated, Zenodo-pinned releases).
-- `schemas/` — JSON Schemas for Target Records and Project Registries.
+- `schemas/` — JSON Schemas for Target Records, Project Registries, and per-project target manifests (`project-repo-target.schema.json`).
 - `scripts/validate_registry.py` — Deterministic cross-reference, linked-list,
   DOI, SHA-256, and privacy validator enforced in CI.
+- `scripts/build_project_page.py` — Validates a per-project repository (`project.json` + `targets/<id>/target.json` with SHA-256 & privacy checks) and renders a self-contained static project registry page (`index.html`).
+- `.github/workflows/project-page.yml` — Reusable `workflow_call` workflow any project repository can call:
+
+```yaml
+jobs:
+  project-page:
+    uses: benavt/structure-atlas-registry/.github/workflows/project-page.yml@main
+    with:
+      publish_pages: false # set true only for intentionally public project repos
+```
 
 ## Validation
 

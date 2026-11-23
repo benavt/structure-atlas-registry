@@ -1,0 +1,67 @@
+name: Validate and Build Project Registry Page
+
+on:
+  workflow_call:
+    inputs:
+      publish_pages:
+        description: "Deploy generated static registry page to GitHub Pages (only set true for intentionally public project repos)"
+        type: boolean
+        required: false
+        default: false
+      output_dir:
+        description: "Directory where the static project page is assembled"
+        type: string
+        required: false
+        default: "_site"
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+jobs:
+  validate_and_build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout project repository
+        uses: actions/checkout@v4
+
+      - name: Checkout shared validator from structure-atlas-registry
+        uses: actions/checkout@v4
+        with:
+          repository: benavt/structure-atlas-registry
+          ref: main
+          path: .atlas-registry-tools
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Validate project manifests, checksums, privacy, and render page
+        run: |
+          mkdir -p "${{ inputs.output_dir }}"
+          if [ -d targets ]; then
+            cp -R targets "${{ inputs.output_dir }}/targets"
+          fi
+          PYTHONPATH=.atlas-registry-tools/scripts python3 .atlas-registry-tools/scripts/build_project_page.py \
+            --repo . \
+            --output "${{ inputs.output_dir }}/index.html"
+
+      - name: Upload Pages artifact
+        if: ${{ inputs.publish_pages && github.event_name != 'pull_request' }}
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: ${{ inputs.output_dir }}
+
+  deploy_pages:
+    if: ${{ inputs.publish_pages && github.event_name != 'pull_request' }}
+    needs: validate_and_build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

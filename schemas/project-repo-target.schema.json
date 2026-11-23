@@ -1,0 +1,115 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/benavt/structure-atlas-registry/schemas/project-repo-target.schema.json",
+  "title": "Project Repository Target Manifest",
+  "description": "Per-target manifest stored at targets/<target_id>/target.json inside a project repository. Tracks sanitized score tables, clustering summaries, final reports, representative models, and selected state/cluster ensembles.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "target_id",
+    "display_name",
+    "cohort_id",
+    "model_count",
+    "scores",
+    "clustering",
+    "representatives",
+    "ensembles",
+    "reports"
+  ],
+  "properties": {
+    "schema_version": { "const": 1 },
+    "target_id": { "type": "string", "pattern": "^[a-z0-9][a-z0-9_-]{1,63}$" },
+    "display_name": { "type": "string", "minLength": 1 },
+    "cohort_id": { "type": "string", "minLength": 1 },
+    "model_count": { "type": "integer", "minimum": 1 },
+    "residue_scopes": {
+      "type": "array",
+      "items": { "type": "string", "minLength": 1 }
+    },
+    "interactive_atlas_url": {
+      "type": ["string", "null"],
+      "pattern": "^https://"
+    },
+    "zenodo_doi": {
+      "type": ["string", "null"],
+      "pattern": "^10\\.5281/zenodo\\.[0-9]+$"
+    },
+    "structure_clustering_tag": { "type": ["string", "null"] },
+    "scores": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["id", "label", "tier", "path", "sha256"],
+        "properties": {
+          "id": { "type": "string", "pattern": "^[a-z0-9][a-z0-9_-]{0,63}$" },
+          "label": { "type": "string", "minLength": 1 },
+          "tier": { "enum": ["model", "residue", "ensemble"] },
+          "units": { "type": "string" },
+          "path": { "type": "string", "minLength": 1 },
+          "sha256": { "type": "string", "pattern": "^[0-9a-f]{64}$" }
+        }
+      }
+    },
+    "clustering": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["memberships_path", "memberships_sha256"],
+      "properties": {
+        "memberships_path": { "type": "string", "minLength": 1 },
+        "memberships_sha256": { "type": "string", "pattern": "^[0-9a-f]{64}$" },
+        "summary_path": { "type": ["string", "null"] },
+        "summary_sha256": { "type": ["string", "null"], "pattern": "^[0-9a-f]{64}$" },
+        "cluster_count": { "type": "integer", "minimum": 1 },
+        "state_count": { "type": "integer", "minimum": 0 }
+      }
+    },
+    "representatives": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["cluster", "model_id", "path", "sha256"],
+        "properties": {
+          "cluster": { "type": "string", "minLength": 1 },
+          "state": { "type": ["string", "null"] },
+          "model_id": { "type": "string", "minLength": 1 },
+          "path": { "type": "string", "minLength": 1 },
+          "sha256": { "type": "string", "pattern": "^[0-9a-f]{64}$" }
+        }
+      }
+    },
+    "ensembles": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["label", "method", "model_count", "path", "sha256"],
+        "properties": {
+          "label": { "type": "string", "minLength": 1 },
+          "state": { "type": ["string", "null"] },
+          "method": { "type": "string", "minLength": 1 },
+          "model_count": { "type": "integer", "minimum": 1 },
+          "path": { "type": "string", "minLength": 1 },
+          "sha256": { "type": "string", "pattern": "^[0-9a-f]{64}$" }
+        }
+      }
+    },
+    "reports": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["title", "sha256"],
+        "properties": {
+          "title": { "type": "string", "minLength": 1 },
+          "path": { "type": ["string", "null"] },
+          "release_url": { "type": ["string", "null"], "pattern": "^https://" },
+          "pages": { "type": "integer", "minimum": 1 },
+          "sha256": { "type": "string", "pattern": "^[0-9a-f]{64}$" }
+        }
+      }
+    }
+  }
+}
