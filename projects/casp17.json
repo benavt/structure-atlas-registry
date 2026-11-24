@@ -10,10 +10,10 @@
   "staged_targets": [
     {
       "target_id": "sr215",
-      "display_name": "SR215 \u00b7 BMRB 6366 (3-Tier RPF)",
+      "display_name": "SR215 · BMRB 6366 (3-Tier RPF)",
       "status": "pre_release",
       "model_count": 12104,
-      "structure_clustering_ref": "v0.5.0",
+      "structure_clustering_ref": "v0.5.1",
       "target_url": "https://casp17-structure-atlas.pages.dev/targets/sr215/",
       "model_cohorts": [
         "ais-11000 (11-method AIS, 11,000 models)",
@@ -30,10 +30,10 @@
     },
     {
       "target_id": "cmr116",
-      "display_name": "CmR116 \u00b7 BMRB 17022",
+      "display_name": "CmR116 · BMRB 17022",
       "status": "pre_release",
       "model_count": 11000,
-      "structure_clustering_ref": "v0.5.0",
+      "structure_clustering_ref": "v0.5.1",
       "target_url": "https://casp17-structure-atlas.pages.dev/targets/cmr116/",
       "model_cohorts": [
         "ais-11000 (11-method AIS, 11,000 models)"
@@ -45,10 +45,10 @@
     },
     {
       "target_id": "pat90",
-      "display_name": "PaT90 \u00b7 BMRB 7191",
+      "display_name": "PaT90 · BMRB 7191",
       "status": "pre_release",
       "model_count": 11000,
-      "structure_clustering_ref": "v0.5.0",
+      "structure_clustering_ref": "v0.5.1",
       "target_url": "https://casp17-structure-atlas.pages.dev/targets/pat90/",
       "model_cohorts": [
         "ais-11000 (11-method AIS, 11,000 models)"
@@ -61,10 +61,10 @@
     },
     {
       "target_id": "str82",
-      "display_name": "StR82 \u00b7 BMRB 15386",
+      "display_name": "StR82 · BMRB 15386",
       "status": "pre_release",
       "model_count": 11000,
-      "structure_clustering_ref": "v0.5.0",
+      "structure_clustering_ref": "v0.5.1",
       "target_url": "https://casp17-structure-atlas.pages.dev/targets/str82/",
       "model_cohorts": [
         "ais-11000 (11-method AIS, 11,000 models)"
@@ -76,10 +76,10 @@
     },
     {
       "target_id": "bhr2",
-      "display_name": "BhR2 \u00b7 BMRB 6717",
+      "display_name": "BhR2 · BMRB 6717",
       "status": "pre_release",
       "model_count": 11000,
-      "structure_clustering_ref": "v0.5.0",
+      "structure_clustering_ref": "v0.5.1",
       "target_url": "https://casp17-structure-atlas.pages.dev/targets/bhr2/",
       "model_cohorts": [
         "ais-11000 (11-method AIS, 11,000 models)"
