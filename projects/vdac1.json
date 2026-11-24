@@ -13,13 +13,13 @@
       "display_name": "2JK4 \u00b7 VDAC1",
       "status": "sandbox_draft",
       "model_count": 11000,
-      "structure_clustering_ref": "v0.2.0",
+      "structure_clustering_ref": "v0.5.0",
       "target_url": "https://vdac1-structure-atlas.pages.dev/targets/2jk4/",
-      "zenodo_sandbox_url": "https://sandbox.zenodo.org/records/647657",
+      "zenodo_sandbox_url": "https://sandbox.zenodo.org/records/648336",
       "residue_scopes": [
         "full294 (A:1-294, 294 aa)"
       ],
-      "notes": "Complete 11,000-model cohort across 11 AIS sampling methods (1,000 models per method) with full 16-timepoint ProteinEBM Model 6 energies."
+      "notes": "Complete 11,000-model cohort across 11 AIS sampling methods (1,000 models per method) with full 16-timepoint ProteinEBM Model 6 energies. Zenodo Sandbox v1.1.0 DOI: 10.5072/zenodo.648336 (Concept DOI: 10.5072/zenodo.647656)."
     }
   ],
   "targets": []

@@ -13,47 +13,47 @@
       "display_name": "PDCD2",
       "status": "sandbox_draft",
       "model_count": 11000,
-      "structure_clustering_ref": "v0.2.0",
+      "structure_clustering_ref": "v0.5.0",
       "target_url": "https://ls-ais-structure-atlas.pages.dev/targets/pdcd2/",
-      "zenodo_sandbox_url": "https://sandbox.zenodo.org/records/647669",
+      "zenodo_sandbox_url": "https://sandbox.zenodo.org/records/648345",
       "residue_scopes": [
         "all (A:1-364, 364 aa)",
         "lid-and-interior (A:120-170 + A:220-270, 102 aa)"
       ],
-      "notes": "Complete 11,000-model cohort across 11 sampling methods with ProteinEBM M6 + FoXS SAXS (q<=0.50 & q<=0.45). Zenodo Sandbox DOI: 10.5072/zenodo.647669."
+      "notes": "Complete 11,000-model cohort across 11 sampling methods with ProteinEBM M6 + FoXS SAXS (q<=0.50 & q<=0.45). Zenodo Sandbox v1.1.0 DOI: 10.5072/zenodo.648345 (Concept DOI: 10.5072/zenodo.647668)."
     },
     {
       "target_id": "cit",
       "display_name": "CIT \u00b7 Citron kinase domain",
       "status": "sandbox_draft",
       "model_count": 11000,
-      "structure_clustering_ref": "v0.2.0",
+      "structure_clustering_ref": "v0.5.0",
       "target_url": "https://ls-ais-structure-atlas.pages.dev/targets/cit/",
-      "zenodo_sandbox_url": "https://sandbox.zenodo.org/records/647652",
+      "zenodo_sandbox_url": "https://sandbox.zenodo.org/records/648346",
       "residue_scopes": [
         "all (A:1-153, 153 aa)"
       ],
-      "notes": "Complete 11,000-model cohort across 11 sampling methods with ProteinEBM M6 + FoXS SAXS (q<=0.38). Zenodo Sandbox DOI: 10.5072/zenodo.647652."
+      "notes": "Complete 11,000-model cohort across 11 sampling methods with ProteinEBM M6 + FoXS SAXS (q<=0.38). Zenodo Sandbox v1.1.0 DOI: 10.5072/zenodo.648346 (Concept DOI: 10.5072/zenodo.647651)."
     },
     {
       "target_id": "hsph1",
       "display_name": "HSPH1 \u00b7 Homodimer",
       "status": "sandbox_draft",
       "model_count": 7000,
-      "structure_clustering_ref": "v0.2.0",
+      "structure_clustering_ref": "v0.5.0",
       "target_url": "https://ls-ais-structure-atlas.pages.dev/targets/hsph1/",
-      "zenodo_sandbox_url": "https://sandbox.zenodo.org/records/647648",
+      "zenodo_sandbox_url": "https://sandbox.zenodo.org/records/648347",
       "residue_scopes": [
         "all (A:1-117 + B:1-117, 234 aa)"
       ],
-      "notes": "Complete 7,000-model homodimer cohort across 7 multimer-capable sampling methods with ProteinEBM M6 + FoXS SAXS. Zenodo Sandbox DOI: 10.5072/zenodo.647648."
+      "notes": "Complete 7,000-model homodimer cohort across 7 multimer-capable sampling methods with ProteinEBM M6 + FoXS SAXS. Zenodo Sandbox v1.1.0 DOI: 10.5072/zenodo.648347 (Concept DOI: 10.5072/zenodo.647647)."
     },
     {
       "target_id": "cdk2-inactive-foxs",
       "display_name": "CDK2\u2013DOC1 & CDK2\u2013DOC1R \u00b7 Inactive & FoXS Cohorts (18 Views)",
       "status": "pre_release",
       "model_count": 14090,
-      "structure_clustering_ref": "v0.2.0",
+      "structure_clustering_ref": "v0.5.0",
       "target_url": "https://ls-ais-structure-atlas.pages.dev/targets/cdk2-inactive-foxs/index.html",
       "zenodo_sandbox_url": null,
       "notes": "18 model \u00d7 residue cohorts across CDK2\u2013DOC1 (Full 413 aa & Core 354 aa) and CDK2\u2013DOC1R (Full 424 aa & Core 360 aa): Inactive AFsample3, AIS (AFsample2+AFsample3+BioEmu2), legacy collaborator AF3, combined, downloads (14k), and FoXS \u03c7\u00b2 0.75\u20131.20 (n=183 DOC1, n=172 DOC1R) with PSTAIRE/T-loop ROIs and C\u03b1 distance maps."
@@ -63,7 +63,7 @@
       "display_name": "DOC1 dimer\u2013CDK2",
       "status": "pre_release",
       "model_count": 75800,
-      "structure_clustering_ref": "v0.2.0",
+      "structure_clustering_ref": "v0.5.0",
       "target_url": "https://ls-ais-structure-atlas.pages.dev/targets/ls-ais-cdk2-doc1/index.html#DOC1dimer_CDK2",
       "zenodo_sandbox_url": null,
       "notes": "75,800-model trimer complex \u00b7 2 residue scopes: Full (A1\u2013115 + B1\u2013115 + C1\u2013298) & Core (A60\u2013115 + B60\u2013115 + C1\u2013298) \u00b7 ProteinEBM M6, UMAP KNN, HDBSCAN, MCMC50/DISCO50."
@@ -73,7 +73,7 @@
       "display_name": "DOC1R dimer\u2013CDK2",
       "status": "pre_release",
       "model_count": 57463,
-      "structure_clustering_ref": "v0.2.0",
+      "structure_clustering_ref": "v0.5.0",
       "target_url": "https://ls-ais-structure-atlas.pages.dev/targets/ls-ais-cdk2-doc1/index.html#DOC1Rdimer_CDK2",
       "zenodo_sandbox_url": null,
       "notes": "57,463-model trimer complex \u00b7 2 residue scopes: Full (A1\u2013126 + B1\u2013126 + C1\u2013298) & Core (A65\u2013126 + B65\u2013126 + C1\u2013298) \u00b7 ProteinEBM M6, UMAP KNN, HDBSCAN, MCMC50/DISCO50."
@@ -83,7 +83,7 @@
       "display_name": "CDK2\u2013DOC1 Monomer (9 Model \u00d7 Residue Cohorts)",
       "status": "pre_release",
       "model_count": 14420,
-      "structure_clustering_ref": "v0.2.0",
+      "structure_clustering_ref": "v0.5.0",
       "target_url": "https://ls-ais-structure-atlas.pages.dev/targets/ls-ais-cdk2-doc1/index.html#CDK2_DOC1?range=combined&view=density",
       "zenodo_sandbox_url": null,
       "notes": "9 model \u00d7 residue cohorts: AFsample3 (1k), AIS Joint (5k), Legacy Collaborator AF3 (910), Combined (5,910), and Downloads (14,420) across Full (A1\u2013298+B1\u2013115, 413 aa) & Trimmed Core (A1\u2013298+B60\u2013115, 354 aa) with FoXS \u03c7\u00b2 & DockQ overlays."
@@ -93,7 +93,7 @@
       "display_name": "CDK2\u2013DOC1t Monomer (Truncated DOC1)",
       "status": "pre_release",
       "model_count": 5000,
-      "structure_clustering_ref": "v0.2.0",
+      "structure_clustering_ref": "v0.5.0",
       "target_url": "https://ls-ais-structure-atlas.pages.dev/targets/ls-ais-cdk2-doc1/index.html#CDK2_DOC1t?range=joint&view=density",
       "zenodo_sandbox_url": null,
       "notes": "2 model cohorts: AFsample3 (1,000 models) & AIS Joint (AFsample2 v1/v2/v3 + AFsample3 + BioEmu2, 5,000 models) \u00b7 Full construct A1\u2013298 + B1\u201355 (353 aa)."
@@ -103,7 +103,7 @@
       "display_name": "CDK2\u2013DOC1R Monomer",
       "status": "pre_release",
       "model_count": 3435,
-      "structure_clustering_ref": "v0.2.0",
+      "structure_clustering_ref": "v0.5.0",
       "target_url": "https://ls-ais-structure-atlas.pages.dev/targets/ls-ais-cdk2-doc1/index.html#CDK2_DOC1R?range=all&view=density",
       "zenodo_sandbox_url": null,
       "notes": "3,435 collaborator AF3 models \u00b7 Full construct A1\u2013298 + B1\u2013126 (424 aa) \u00b7 UMAP KNN, HDBSCAN leaf, HDBSCAN EOM."
@@ -113,7 +113,7 @@
       "display_name": "CDK2 Monomer",
       "status": "pre_release",
       "model_count": 284,
-      "structure_clustering_ref": "v0.2.0",
+      "structure_clustering_ref": "v0.5.0",
       "target_url": "https://ls-ais-structure-atlas.pages.dev/targets/ls-ais-cdk2-doc1/index.html#CDK2_MONOMER?range=all&view=density",
       "zenodo_sandbox_url": null,
       "notes": "284 collaborator AF3 CDK2 monomer models \u00b7 Full construct A1\u2013298 (298 aa) \u00b7 UMAP KNN, HDBSCAN leaf, HDBSCAN EOM."
@@ -123,7 +123,7 @@
       "display_name": "CDK2 Activation Classifier Explorer",
       "status": "pre_release",
       "model_count": 176712,
-      "structure_clustering_ref": "v0.2.0",
+      "structure_clustering_ref": "v0.5.0",
       "target_url": "https://ls-ais-structure-atlas.pages.dev/targets/ls-ais-cdk2-doc1/classifier/index.html",
       "zenodo_sandbox_url": null,
       "notes": "Interactive CDK2 activation-state geometry classifier covering 176,712 models across all DOC1/DOC1R/CDK2 cohorts (PSTAIRE, T-loop, DFG metrics & CSV export)."
