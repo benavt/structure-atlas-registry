@@ -13,7 +13,7 @@
       "display_name": "SR215 \u00b7 BMRB 6366 (3-Tier RPF)",
       "status": "pre_release",
       "model_count": 12104,
-      "structure_clustering_ref": "v0.2.0",
+      "structure_clustering_ref": "v0.5.0",
       "target_url": "https://casp17-structure-atlas.pages.dev/targets/sr215/",
       "model_cohorts": [
         "ais-11000 (11-method AIS, 11,000 models)",
@@ -33,7 +33,7 @@
       "display_name": "CmR116 \u00b7 BMRB 17022",
       "status": "pre_release",
       "model_count": 11000,
-      "structure_clustering_ref": "v0.2.0",
+      "structure_clustering_ref": "v0.5.0",
       "target_url": "https://casp17-structure-atlas.pages.dev/targets/cmr116/",
       "model_cohorts": [
         "ais-11000 (11-method AIS, 11,000 models)"
@@ -48,7 +48,7 @@
       "display_name": "PaT90 \u00b7 BMRB 7191",
       "status": "pre_release",
       "model_count": 11000,
-      "structure_clustering_ref": "v0.2.0",
+      "structure_clustering_ref": "v0.5.0",
       "target_url": "https://casp17-structure-atlas.pages.dev/targets/pat90/",
       "model_cohorts": [
         "ais-11000 (11-method AIS, 11,000 models)"
@@ -64,7 +64,7 @@
       "display_name": "StR82 \u00b7 BMRB 15386",
       "status": "pre_release",
       "model_count": 11000,
-      "structure_clustering_ref": "v0.2.0",
+      "structure_clustering_ref": "v0.5.0",
       "target_url": "https://casp17-structure-atlas.pages.dev/targets/str82/",
       "model_cohorts": [
         "ais-11000 (11-method AIS, 11,000 models)"
@@ -79,7 +79,7 @@
       "display_name": "BhR2 \u00b7 BMRB 6717",
       "status": "pre_release",
       "model_count": 11000,
-      "structure_clustering_ref": "v0.2.0",
+      "structure_clustering_ref": "v0.5.0",
       "target_url": "https://casp17-structure-atlas.pages.dev/targets/bhr2/",
       "model_cohorts": [
         "ais-11000 (11-method AIS, 11,000 models)"
