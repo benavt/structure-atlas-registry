@@ -49,7 +49,7 @@
     },
     "zenodo_concept_doi": {
       "type": ["string", "null"],
-      "pattern": "^10\\.5281/zenodo\\.[0-9]+$"
+      "pattern": "^10\\.(5281|5072)/zenodo\\.[0-9]+$"
     },
     "current_release": { "type": "string", "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+$" },
     "releases": {
@@ -91,7 +91,7 @@
             "required": ["environment", "version_doi", "url", "package_sha256"],
             "properties": {
               "environment": { "enum": ["sandbox", "production"] },
-              "version_doi": { "type": "string", "pattern": "^10\\.5281/zenodo\\.[0-9]+$" },
+              "version_doi": { "type": "string", "pattern": "^10\\.(5281|5072)/zenodo\\.[0-9]+$" },
               "url": { "type": "string", "pattern": "^https://" },
               "package_sha256": { "type": "string", "pattern": "^[0-9a-f]{64}$" }
             }
