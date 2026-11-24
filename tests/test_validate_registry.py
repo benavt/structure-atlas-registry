@@ -198,3 +198,58 @@ def test_email_leak_rejected(tmp_path: Path) -> None:
     )
     with pytest.raises(RegistryValidationError, match="Privacy violation"):
         validate_registry(tmp_path)
+
+
+def test_zenodo_sandbox_multi_version_dois_allowed(tmp_path: Path) -> None:
+    (tmp_path / "targets").mkdir()
+    (tmp_path / "projects").mkdir()
+    rec = _make_target("6ocv", "jernigan", ["jernigan"], "10.5072/zenodo.647641")
+    rec["zenodo_concept_doi"] = "10.5072/zenodo.647640"
+    rec["current_release"] = "1.1.0"
+    rec["releases"][0]["zenodo"]["environment"] = "sandbox"
+    rec["releases"][0]["zenodo"]["url"] = "https://sandbox.zenodo.org/doi/10.5072/zenodo.647641"
+    rec["releases"].append(
+        {
+            **rec["releases"][0],
+            "version": "1.1.0",
+            "released_at": "2026-11-24",
+            "structure_clustering": {
+                "tag": "v0.3.0",
+                "commit": "f" * 40,
+                "zenodo_doi": None,
+            },
+            "zenodo": {
+                "environment": "sandbox",
+                "version_doi": "10.5072/zenodo.647642",
+                "url": "https://sandbox.zenodo.org/doi/10.5072/zenodo.647642",
+                "package_sha256": "9" * 64,
+            },
+        }
+    )
+    (tmp_path / "targets" / "6ocv.json").write_text(json.dumps(rec), encoding="utf-8")
+    (tmp_path / "projects" / "jernigan.json").write_text(
+        json.dumps(
+            {
+                "schema_version": 1,
+                "project_id": "jernigan",
+                "title": "Jernigan",
+                "repository": "benavt/Jernigan",
+                "canonical_site": "https://jernigan-structure-atlas.pages.dev/",
+                "targets": [
+                    {
+                        "target_id": "6ocv",
+                        "release_version": "1.1.0",
+                        "zenodo_concept_doi": "10.5072/zenodo.647640",
+                        "zenodo_version_doi": "10.5072/zenodo.647642",
+                        "target_url": "https://jernigan-structure-atlas.pages.dev/targets/6ocv/",
+                        "prev_target_id": None,
+                        "next_target_id": None,
+                    }
+                ],
+            }
+        ),
+        encoding="utf-8",
+    )
+    summary = validate_registry(tmp_path)
+    assert summary["targets_validated"] == 1
+

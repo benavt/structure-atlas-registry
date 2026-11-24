@@ -73,9 +73,9 @@
           "release_version": { "type": "string", "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+$" },
           "zenodo_concept_doi": {
             "type": ["string", "null"],
-            "pattern": "^10\\.5281/zenodo\\.[0-9]+$"
+            "pattern": "^10\\.(5281|5072)/zenodo\\.[0-9]+$"
           },
-          "zenodo_version_doi": { "type": "string", "pattern": "^10\\.5281/zenodo\\.[0-9]+$" },
+          "zenodo_version_doi": { "type": "string", "pattern": "^10\\.(5281|5072)/zenodo\\.[0-9]+$" },
           "target_url": { "type": "string", "pattern": "^https://" },
           "prev_target_id": { "type": ["string", "null"] },
           "next_target_id": { "type": ["string", "null"] }

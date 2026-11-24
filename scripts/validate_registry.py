@@ -23,7 +23,7 @@ SHA256_RE = re.compile(r"^[0-9a-f]{64}$")
 COMMIT_RE = re.compile(r"^[0-9a-f]{40}$")
 SEMVER_RE = re.compile(r"^[0-9]+\.[0-9]+\.[0-9]+$")
 DATE_RE = re.compile(r"^[0-9]{4}-[0-9]{2}-[0-9]{2}$")
-DOI_RE = re.compile(r"^10\.5281/zenodo\.[0-9]+$")
+DOI_RE = re.compile(r"^10\.(5281|5072)/zenodo\.[0-9]+$")
 ID_RE = re.compile(r"^[a-z0-9][a-z0-9_-]{1,63}$")
 PROJ_ID_RE = re.compile(r"^[a-z0-9][a-z0-9-]{1,63}$")
 

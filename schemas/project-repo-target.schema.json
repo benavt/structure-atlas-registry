@@ -33,7 +33,7 @@
     },
     "zenodo_doi": {
       "type": ["string", "null"],
-      "pattern": "^10\\.5281/zenodo\\.[0-9]+$"
+      "pattern": "^10\\.(5281|5072)/zenodo\\.[0-9]+$"
     },
     "structure_clustering_tag": { "type": ["string", "null"] },
     "scores": {
